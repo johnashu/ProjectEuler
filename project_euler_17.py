@@ -37,10 +37,11 @@ def int2num(n):
         else:
             l = d[l - l%10] + (d[l%10] if d[l%10] != 'zero' else '')
         
-        return d[n//100] + 'hundredand' + l #d[n%10] #+ d[n%100]
+        return d[n//100] + 'hundred' + ('and' + l if l != 'zero' else '') #d[n%10] #+ d[n%100]
 
 c = 0
 for i in range(1, 1001):    
     c += len(int2num(i))
     print(c, i, int2num(i))
-print(c) # 21180
+
+print('Total', c) # 21124
