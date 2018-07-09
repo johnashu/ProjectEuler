@@ -6,23 +6,24 @@
 
 def is_palindrome(num):
     """ Check if a number is a Palindrome """
-    try:
-        if str(num) == str(num)[::-1]:
-            return True
-        else:
-            return False
-    except ValueError:
-        print("That's not a valid number, Try Again !")
+    return int(str(num)[::-1]) == num
 
 print(is_palindrome(9009))
 
 def largest(n):
     """ Check for the largest n * n - digit numbers """
+
     n = int('9' * n) + 1
+
+    current = 0
+
     for i in reversed(range(n)):
         for j in reversed(range(n)):
-            if is_palindrome(i * j):
-                return i * j
+            if is_palindrome(i * j) and (i * j) > current:
+                current = i*j
+                
+    return current
 
 l = largest(3)
 print(l)
+
