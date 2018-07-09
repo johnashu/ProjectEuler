@@ -12,9 +12,9 @@ def int2num(n):
             6 : 'six', 7 : 'seven', 8 : 'eight', 9 : 'nine', 10 : 'ten', \
             11 : 'eleven', 12 : 'twelve', 13 : 'thirteen', 14 : 'fourteen', \
             15 : 'fifteen', 16 : 'sixteen', 17 : 'seventeen', 18 : 'eighteen', \
-            19 : 'ninteen', 20 : 'twenty', \
+            19 : 'nineteen', 20 : 'twenty', \
             30 : 'thirty', 40 : 'forty', 50 : 'fifty', 60 : 'sixty', \
-            70 : 'seventy', 80 : 'eighty', 90 : 'ninty' }
+            70 : 'seventy', 80 : 'eighty', 90 : 'ninety' }
     k = 1000
     h = 100
 
@@ -40,6 +40,7 @@ def int2num(n):
         return d[n//100] + 'hundredand' + l #d[n%10] #+ d[n%100]
 
 c = 0
-for i in range(1, 1001):
+for i in range(1, 1001):    
     c += len(int2num(i))
-print(c) # 21070
+    print(c, i, int2num(i))
+print(c) # 21180
